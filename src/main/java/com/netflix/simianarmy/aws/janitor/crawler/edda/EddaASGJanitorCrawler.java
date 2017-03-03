@@ -220,8 +220,7 @@ public class EddaASGJanitorCrawler implements JanitorCrawler {
         Long lastChangeTime = regionToAsgToLastChangeTime.get(region).get(asgName);
         if (lastChangeTime != null) {
             resource.setAdditionalField(ASG_FIELD_LAST_CHANGE_TIME, String.valueOf(lastChangeTime));
-        }
-		
+        }	
 	}
 	
 	private void createJsonNodeLaunchConfigurationName(JsonNode jsonNode, Map<String, Long> lcNameToCreationTime, Resource resource) {
@@ -236,7 +235,6 @@ public class EddaASGJanitorCrawler implements JanitorCrawler {
                 resource.setAdditionalField(ASG_FIELD_LC_CREATION_TIME, String.valueOf(lcCreationTime));
             }
         }
-		
 	}
 
 	private void addInstancesAndELBs(JsonNode jsonNode, Resource resource) {
