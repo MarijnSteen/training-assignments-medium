@@ -123,9 +123,13 @@ public class AWSResource implements Resource {
      */
     public static AWSResource parseFieldtoValueMap(Map<String, String> fieldToValue) {
         AWSResource resource = new AWSResource();
+        resource.setId(fieldToValue.get(FIELD_RESOURCE_ID));
         for (Map.Entry<String, String> field : fieldToValue.entrySet()) {
             String name = field.getKey();
             String value = field.getValue();
+            
+
+            
             if (name.equals(FIELD_RESOURCE_ID)) {
                 resource.setId(value);
             } else if (name.equals(FIELD_RESOURCE_TYPE)) {
